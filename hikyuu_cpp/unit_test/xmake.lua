@@ -165,7 +165,8 @@ target("small-test")
     end
 
     -- add files
-    add_files("./hikyuu/hikyuu/**.cpp");
+    add_rules("c++.unity_build", {batchsize = 0})
+    add_files("./hikyuu/hikyuu/**.cpp", {unity_group="hikyuu"})
     add_files("./hikyuu/*.cpp")
 
     before_run(prepare_run)
